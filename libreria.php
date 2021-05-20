@@ -10,7 +10,7 @@ function leerDatos(){
 
 /*Inicializar los input select*/
 function obtnciudad($getData){ //Opciones de ciudad
-  $getCities = Array(); //Crear una matriz para evitar repetir ciudades
+  $getCities = Array(); //Crear una matriz donde se guardarán los valores de las ciudades
   foreach ($getData as $cities => $city) { //Recorrer la información
     if(in_array($city['Ciudad'], $getCities)){ //Verificar si el valor existe en el array
       //Continuar
@@ -27,7 +27,7 @@ function obtnTipo($getData){ //Opciones de Tipo
     if(in_array($tipo['Tipo'], $getTipo)){ //Verificar si el valor existe en el array
       //Ciudad ya agregada. Continuar
     }else{
-      array_push($getTipo, $tipo['Tipo']); //Agregar la ciudad a la matriz
+      array_push($getTipo, $tipo['Tipo']); //Agregar el tipo a la matriz
     }
   }
   echo json_encode($getTipo); //Devolver la matriz con los valores de los tipos en formato JSON
