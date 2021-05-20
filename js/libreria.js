@@ -18,7 +18,7 @@ $('#formulario').on('submit', function(event){
 //Funcion para obtener las ciudades en el input
 function obtnCiudad(){
   $.ajax({
-    url:'./ciudad.php',
+    url:'./componentes/ciudad.php',
     type: 'GET',
     data:{},
     success:function(ListaCiudades){
@@ -33,7 +33,7 @@ function obtnCiudad(){
 //Funcion que trae el tipo de propiedad a buscar para los filtros.
 function obtnTipo(){
   $.ajax({
-    url:'./tipo.php',
+    url:'./componentes/tipo.php',
     type: 'GET',
     data:{},
     success:function(tipoList){
@@ -62,7 +62,7 @@ function buscarItem(filtrar){
   }
   var filtro = obtFiltros(filtrar)
   $.ajax({
-    url:'./buscador.php',
+    url:'./componentes/buscador.php',
     type: 'GET',
     data:{filtro},
     success:function(items, textStatus, errorThrown ){
@@ -87,7 +87,7 @@ function buscarItem(filtrar){
                     '<p><b>Tipo: </b>'+item.Tipo+'</p>'+ //Obtener el valor Tipo del  objeto
                     '<p><b>Precio: </b><span class="precioTexto">'+item.Precio+'</span></p>'+ //Obtener el valor de la propiedad Precio del objeto
                   '</div>'+
-                  '<div class="card-content" >'+ 
+                  '<div class="card-content" >'+
                   '<span class="card-title activator grey-text text-darken-4">Ver Más<i class="material-icons right">more_vert</i></span>'+
                   '</div>'+
                   '<div class="card-reveal">'+
